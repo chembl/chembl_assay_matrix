@@ -17,7 +17,7 @@ if sys.version_info < (2, 7, 3) or sys.version_info >= (2, 7, 7):
 
 setup(
     name='chembl_assay_network',
-    version='0.6.0',
+    version='0.6.1',
     author='Michal Nowotka',
     author_email='mnowotka@ebi.ac.uk',
     description='Python package generating compound co-occurance matrix for all assays from given document',
@@ -35,7 +35,7 @@ setup(
                  'Environment :: Web Environment',
                  'Framework :: Django',
                  'Intended Audience :: Developers',
-                 'License :: Creative Commons :: Attribution-ShareAlike 3.0 Unported',
+                 'License :: OSI Approved :: Apache Software License',
                  'Operating System :: POSIX :: Linux',
                  'Programming Language :: Python :: 2.7',
                  'Topic :: Scientific/Engineering :: Chemistry'],
