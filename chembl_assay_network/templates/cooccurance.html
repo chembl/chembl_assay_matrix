@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="ocks-org do-not-copy">
+<meta charset="utf-8">
+<title>Assay network topology</title>
+<style>
+
+@import url({{ STATIC_URL }}css/cooccurance.css);
+@import url({{ STATIC_URL }}css/d3tip.css);
+@import url({{ STATIC_URL }}css/jquery.dataTables.css);
+
+.background {
+  fill: #eee;
+}
+
+line {
+  stroke: #fff;
+}
+
+text.active {
+  fill: red;
+}
+
+text.linked {
+  fill: #0000EE;
+  text-decoration:underline;
+}
+
+</style>
+<script src="{{ STATIC_URL }}js/jquery.js"></script>
+<script src="{{ STATIC_URL }}js/d3.min.js"></script>
+<script src="{{ STATIC_URL }}js/d3tip.js"></script>
+<script src="{{ STATIC_URL }}js/jquery.dataTables.min.js"></script>
+<script src="{{ STATIC_URL }}js/spin.min.js"></script>
+<script src="{{ STATIC_URL }}js/color.min.js"></script>
+<script src="{{ STATIC_URL }}js/cooccurance.js"></script>
+<script>
+    $(document).ready(function(){
+        draw("{% url 'occurance_data' doc_id %}");
+    });
+</script>
+
+<h1>Assay network topology for data {% if paper_title or pubmed_id %}from <br /> {{ paper_title|default:'' }} {% if paper_title and pubmed_id %}, {% endif %}{% if pubmed_id %}pubmed_id={{ pubmed_id }}{% endif %}{% endif %}</h1>
+
+<aside style="margin-top:80px;">
+
+<p>Order: <select id="order">
+  <option value="group" selected="selected">by Cluster</option>
+  <option value="name">by Name</option>
+  <option value="count">by Frequency</option>
+  <option value="assay_type">by Assay Type</option>
+  <option value="assay_test_type">by Assay Test Type</option>
+</select></p>
+
+<p>Color: <select id="color">
+  <option value="solid" selected="selected">Solid</option>
+  <option value="assay_type">by Assay Type</option>
+  <option value="assay_test_type">by Assay Test Type</option>
+</select></p>
+
+<p>This matrix diagram visualizes compound co-occurrences between assays in document.</p>
+
+<p>Each colored cell represents number of compounds common to assays; darker cells indicate larger set of common compounds.</p>
+
+<p>Number of assays: <span id="assay_num" /></p>
+
+<p>Number of assay data points: <span id="data_num" /></p>
+
+<p>Built with <a href="http://d3js.org/">d3.js</a>.</p>
+
+<p style="padding-left:40px;"><img src="{{ STATIC_URL }}img/chembl.png" with=72 height=72/></p>
+
+<div id="legend_container"></div>
+
+</aside>
+
+</html>
+
+
