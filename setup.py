@@ -16,8 +16,8 @@ if sys.version_info < (2, 7, 3) or sys.version_info >= (2, 7, 7):
     raise Exception('ChEMBL software stack requires python 2.7.3 - 2.7.7')
 
 setup(
-    name='chembl_assay_network',
-    version='0.6.1',
+    name='chembl-assay-network',
+    version='0.8.1',
     author='Michal Nowotka',
     author_email='mnowotka@ebi.ac.uk',
     description='Python package generating compound co-occurance matrix for all assays from given document',
@@ -26,7 +26,7 @@ setup(
     packages=['chembl_assay_network'],
     long_description=open('README.rst').read(),
     install_requires=[
-        'chembl_core_model>=0.6.0',
+        'chembl-core-model>=0.8.3',
         'numpy>=1.7.1',
         'scipy',
     ],
