@@ -5,7 +5,7 @@ This is chembl_assay_network package developed at Chembl group, EMBL-EBI, Cambri
 
 This package generate compound co-occurance matrix for all assays from given document.
 
-.. image:: https://dl.dropboxusercontent.com/u/10967207/static/assay_net.png
+.. image:: https://raw.githubusercontent.com/chembl/chembl_assay_matrix/master/assay_net.png
     :alt: Screenshot
     
     
